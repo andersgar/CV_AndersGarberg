@@ -1,0 +1,358 @@
+%-------------------------
+% Resume in Latex (Anders Garberg) - norsk versjon
+% Based off of: https://github.com/jakeryang/resume
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[norsk]{babel}
+\usepackage{tabularx}
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width (for \texttt)
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% colors
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+% custom underline
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+% helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% SPACING SYSTEM
+%
+% All vertical spacing is controlled from the four values below plus the
+% \setlist line. Change these, not the individual commands.
+%
+%   \entrysep  space between two top-level entries (employer to employer)
+%   \rolesep   space between two roles nested under one organisation
+%   \hugup     negative space that pulls a bullet list up under its heading
+%   itemsep    space between bullets (in \setlist)
+%-------------------------
+\newlength{\entrysep}\setlength{\entrysep}{5pt}
+\newlength{\rolesep}\setlength{\rolesep}{4pt}
+\newlength{\hugup}\setlength{\hugup}{-3pt}
+
+\setlist[itemize]{topsep=2pt, partopsep=0pt, parsep=0pt, itemsep=2pt, leftmargin=*}
+
+% section styling
+\titleformat{\section}{
+    \bfseries \raggedright \large
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]}]
+\titlespacing*{\section}{0pt}{12pt}{3pt}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{\entrysep}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
+      \textit{#3} & {\color{dark-grey}\small #4}\\
+    \end{tabular*}\vspace{\hugup}
+}
+
+% organisation header for grouping several roles under one employer
+\newcommand{\resumeOrgHeading}[3]{
+  \vspace{\entrysep}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\
+      {\color{dark-grey}\small #3} & \\
+    \end{tabular*}\vspace{\hugup}
+}
+
+% role line nested under an organisation header
+\newcommand{\resumeRoleHeading}[2]{
+  \vspace{\rolesep}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{#1} & {\color{dark-grey}\small #2}\\
+    \end{tabular*}\vspace{\hugup}
+}
+
+\newcommand{\resumeRoleListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeRoleListEnd}{\end{itemize}}
+\newcommand{\resumeRoleItemListStart}{\begin{itemize}[label=$\bullet$]}
+\newcommand{\resumeRoleItemListEnd}{\end{itemize}}
+
+% project heading with right-side date
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{\entrysep}\item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}\small #2} \\
+    \end{tabular*}\vspace{\hugup}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% single-block section body (PROFIL, FERDIGHETER, ANNET)
+\newcommand{\resumeBlockStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeBlockEnd}{\end{itemize}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  CV STARTER HER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Anders Garberg} \\ \vspace{5pt}
+    \small
+    Ingeni{\o}r i automasjon og robotikk \textbullet\ Masterstudent i kybernetikk og robotikk (NTNU)
+    \\ \vspace{7pt}
+    \small
+    \faPhone* \hspace{2pt} \texttt{+47 978 79 280} \hspace{6pt} $|$ \hspace{6pt}
+    \faEnvelope \hspace{2pt} \href{mailto:anders@garberg.wtf}{\texttt{anders@garberg.wtf}} \hspace{6pt} $|$  \hspace{6pt}
+    \faMapMarker* \hspace{2pt}\texttt{Trondheim} \hspace{6pt} \\ \vspace{3pt}
+    \faLinkedin \hspace{2pt} \href{https://no.linkedin.com/in/anders-garberg}{\texttt{LinkedIn}} \hspace{6pt} $|$ \hspace{6pt}
+    \faGithub \hspace{2pt} \href{https://github.com/andersgar/}{\texttt{GitHub}} \hspace{6pt} $|$ \hspace{6pt}
+    \faGlobeEurope \hspace{2pt} \href{https://garberg.wtf}{\texttt{garberg.wtf}} \hspace{6pt}
+\end{center}
+
+%-----------PROFIL-----------
+\section{PROFIL}
+\resumeBlockStart
+  \small{\item{
+Masterstudent i kybernetikk og robotikk ved NTNU med fullf{\o}rt bachelor i automatisering og intelligente systemer. Robotikk, autonomi og regulering, med praktisk erfaring fra ROS~2-systemer, simulering i NVIDIA Isaac Sim og industriell programvareutvikling.
+  }}
+\resumeBlockEnd
+
+%-----------FERDIGHETER-----------
+\section{FERDIGHETER}
+\resumeBlockStart
+  \small{\item{
+    \textbf{Programmering}{: C/C++; Python; MATLAB; PLS ST/Ladder; TypeScript/React}\vspace{3pt} \\
+    \textbf{Robotikk og autonomi}{: ROS~2; NVIDIA Isaac Sim; UGV- og overflatefart{\o}yplattformer; sensorintegrasjon; guidance og navigasjon; operat{\o}rgrensesnitt (Qt)}\vspace{3pt} \\
+    \textbf{Regulering og modellering}{: reguleringsteknikk; MPC; systemidentifikasjon; Simulink; OPC}\vspace{3pt} \\
+    \textbf{Systemer og verkt{\o}y}{: Linux, ogs{\aa} embedded (Jetson); Docker Compose; Git; nettverk, reverse proxy og overv{\aa}kning}
+  }}
+\resumeBlockEnd
+
+%-----------ERFARING-----------
+\section{ERFARING}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Marinor NTNU}{sep. 2026 -- n{\aa}}
+    {Autonomy Engineer (frivillig teknisk verv)}{Trondheim}
+    \resumeItemListStart
+      \resumeItem{Studentorganisasjon som utvikler autonome maritime fart{\o}y; medlem av Ocean Autonomy Cluster.}
+      \resumeItem{Jobber med autonomistacken, med guidance og navigasjon for et autonomt overflatefart{\o}y.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {KONGSBERG}{juni 2026 -- aug. 2026}
+    {Sommerstudent programvare, Lone Wolf}{Kongsberg}
+    \resumeItemListStart
+      \resumeItem{Bidro til utviklingen av en ny ubemannet bakkeplattform (UGV) i Lone Wolf-prosjektet, inkludert design og integrasjon av et nytt plattformkonsept.}
+      \resumeItem{Etablerte kommunikasjon mellom sensorer, aktuatorer og operat{\o}rsystemer; utviklet ICS-operat{\o}rpanelet og lenken mellom panel og plattform.}
+      \resumeItem{Utviklet, testet og verifiserte ROS~2-basert autonomiprogramvare (C++).}
+    \resumeItemListEnd
+
+  \resumeOrgHeading
+    {NTNU}{}
+    {L{\ae}ringsassistent \textbullet\ Trondheim}
+  \resumeRoleListStart
+    \resumeItem{Veileder studenter i {\o}vinger og labarbeid, gir faglig oppf{\o}lging og st{\o}tter fagstaben i gjennomf{\o}ringen.}
+
+    \resumeRoleHeading{TDT4136 Introduksjon til kunstig intelligens}{aug. 2026 -- n{\aa}}
+        \vspace{-15pt} % OVERLY LARGE GAP HERE!
+
+    \resumeRoleHeading{IELET2107 Robotikk og maskinsyn}{aug. 2026 -- n{\aa}}
+        \vspace{-15pt} % OVERLY LARGE GAP HERE!
+
+    \resumeRoleHeading{AIST2102 KI for robotikk og automatisering}{jan. 2026 -- mai 2026}
+        \vspace{-15pt} % OVERLY LARGE GAP HERE!
+
+    \resumeRoleHeading{ISTT1002 Statistikk}{aug. 2025 -- des. 2025, aug. 2026 -- n{\aa}}
+  \resumeRoleListEnd
+
+  \resumeSubheading
+    {Trondheim Kino}{juni 2021 -- n{\aa}}
+    {Deltid: skiftleder, bartender, salgsvert}{Trondheim}
+    \resumeItemListStart
+      \resumeItem{Skiftleder med ansvar for daglig drift, oppl{\ae}ring av ansatte og kundeservice; innf{\o}rte rutiner som effektiviserte billett- og kiosksalget. Jobber ogs{\aa} selvstendig i kinobaren med ansvar for alkoholservering.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Forsvaret}{aug. 2022 -- jan. 2024}
+    {Sambandsoperat{\o}r i luftvernet}{{\O}rland}
+    \resumeItemListStart
+      \resumeItem{Operativ erfaring med sambandssystemer i et milj{\o} med h{\o}y beredskap som del av NATO Response Force; s{\o}rget for sikker og effektiv kommunikasjon mellom luftvernsystemer under krevende forhold.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------UTDANNING-----------
+\newpage
+\section{UTDANNING}
+\resumeSubHeadingListStart
+
+  \resumeOrgHeading
+    {NTNU}{}
+    {Trondheim}
+  \resumeRoleListStart
+
+    \resumeRoleHeading{Master i kybernetikk og robotikk}{aug. 2026 -- juni 2028}
+    \resumeRoleItemListStart
+      \resumeItem{Studieretning roboter og fart{\o}ystyring.}
+    \resumeRoleItemListEnd
+
+    \resumeRoleHeading{Bachelor i automatisering og intelligente systemer}{aug. 2023 -- juni 2026}
+    \resumeRoleItemListStart
+      \resumeItem{Tre{\aa}rig ingeni{\o}rutdanning i reguleringsteknikk, robotikk, autonomi og intelligente systemer.}
+      \resumeItem{Snittkarakter 4,5 av 5 (A). Bacheloroppgave: A.}
+    \resumeRoleItemListEnd
+
+  \resumeRoleListEnd
+
+  % \resumeSubheading
+  %   {Thora Storm videreg{\aa}ende skole}{aug. 2019 -- juni 2022}
+  %   {Studiespesialisering med realfag}{Trondheim}
+  %   \resumeItemListStart
+  %     \resumeItem{Matematikk R1/R2, fysikk 1/2 og teknologi og forskningsl{\ae}re.}
+  %   \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROSJEKTER-----------
+\section{PROSJEKTER}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Bacheloroppgave: Lone Wolf, syntetisk testmilj{\o}} \ (med KONGSBERG)}{jan. 2026 -- juni 2026}
+    \resumeItemListStart
+      \resumeItem{Bygde et modul{\ae}rt og konfigurerbart syntetisk testmilj{\o} i NVIDIA Isaac Sim for den planlagte Lone Wolf-UGV-en, laget for {\aa} st{\o}tte framtidige plattform-, nyttelast- og sensorkonfigurasjoner.}
+      \resumeItem{La vekt p{\aa} konsistente grensesnitt (/clock, TF, topics), repeterbare scenarier og testing i lukket sl{\o}yfe for {\aa} bli mindre avhengig av fysisk maskinvare under utviklingen.}
+      \resumeItem{Leverte en simuleringsflyt som kan brukes som en praktisk forlengelse av den fysiske plattformen og som grunnlag for syntetisk datagenerering og testing av persepsjon. Gruppe p{\aa} fire.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Informize - digitale informasjonsskjermer (webapp)} \ }{2025 -- n{\aa}}
+    \resumeItemListStart
+      \resumeItem{Bygde en fullstack webapplikasjon for {\aa} lage og kj{\o}re ubetjente informasjonsskjermer (digital signage): skjermer, innhold og avspilling laget for stabil drift d{\o}gnet rundt.}
+    \resumeItemListEnd
+
+  % \resumeProjectHeading
+  %   {\textbf{Homelab} \ }{2024 -- n{\aa}}
+  %   \resumeItemListStart
+  %     \resumeItem{Egen lab med Docker Compose, reverse proxy og overv{\aa}kning; brukes som praktisk sandkasse for infrastruktur, nettverk og automatisering.}
+  %   \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Automatiseringsprosjekt - niv{\aa}regulering av vanntank} \ }{2025}
+    \resumeItemListStart
+      \resumeItem{Utviklet en tidsdiskret PID/PI-D-regulator i PLS (Structured Text) med tracking og rykkfri overgang, anti-windup, derivatfilter og lead-lag-foroverkobling for forstyrrelseskompensering.}
+      \resumeItem{Bygde et oppsett for simulering i lukket sl{\o}yfe ved {\aa} koble PLS og Simulink via OPC. Brukte datadrevet modellering (MATLAB System Identification / NLARX) til {\aa} tune og validere oppf{\o}rselen f{\o}r idriftsettelse.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------VERV OG FRIVILLIG ARBEID-----------
+\section{VERV OG FRIVILLIG ARBEID}
+\resumeSubHeadingListStart
+
+  \resumeOrgHeading
+    {Elektra linjeforening}{}
+    {Linjeforening for elektroingeni{\o}rstudenter ved NTNU \textbullet\ Trondheim}
+  \resumeRoleListStart
+
+    \resumeRoleHeading{Revisor}{aug. 2026 -- n{\aa}}
+    \resumeRoleItemListStart
+      \resumeItem{G{\aa}r gjennom foreningens regnskap uavhengig av styret, avstemmer rapporterte tall mot bilag og signerer revisjonsberetningen som legges fram for generalforsamlingen.}
+    \resumeRoleItemListEnd
+        \vspace{-5pt} % OVERLY LARGE GAP HERE!
+
+
+    \resumeRoleHeading{Medlem av arrangementskomiteen}{aug. 2023 -- juni 2026}
+    \vspace{-10pt} % OVERLY LARGE GAP HERE!
+    \resumeRoleHeading{{\O}konomiansvarlig}{okt. 2024 -- nov. 2025}
+    \resumeRoleItemListStart
+      \resumeItem{Hadde ansvar for budsjett, regnskap og {\o}konomisk planlegging for en forening med flere hundre medlemmer.}
+      \resumeItem{Etablerte rutiner for {\o}konomistyring som ga bedre oversikt over inntekter og utgifter og gjorde overleveringen til neste styre enkel.}
+    \resumeRoleItemListEnd
+    \vspace{-5pt} % OVERLY LARGE GAP HERE!
+
+    \resumeRoleHeading{{\O}konomiansvarlig i arrangementskomiteen}{aug. 2023 -- okt. 2024}
+
+  \resumeRoleListEnd
+
+
+  \resumeSubheading
+    {UKA}{aug. 2023 -- nov. 2023}
+    {Bartender (frivillig)}{Trondheim}
+    \resumeItemListStart
+      \resumeItem{Jobbet under en av Norges st{\o}rste studentfestivaler p{\aa} Samfundet; servicerolle i h{\o}yt tempo som ga erfaring med samarbeid og stressmestring.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Stormrevyen}{juni 2021 -- mai 2022}
+    {Revysjef og {\o}konomiansvarlig (frivillig)}{Trondheim}
+    \resumeItemListStart
+      \resumeItem{Ledet en {\aa}rlig skolerevy med over 150 deltakere, med ansvar for planlegging, {\o}vinger og gjennomf{\o}ring. Hadde budsjettansvar, inkludert billettinntekter og sponsoravtaler.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------ANNET-----------
+\section{ANNET}
+\resumeBlockStart
+  \small{\item{
+    \textbf{Spr{\aa}k}{: norsk (morsm{\aa}l), engelsk (flytende)} \hspace{6pt}$|$\hspace{6pt} \textbf{Statsborgerskap}{: norsk} \hspace{6pt}$|$\hspace{6pt} \textbf{F{\o}rerkort}{: klasse B}\vspace{3pt}\\
+    \textbf{Sikkerhetsklarering}{: hatt under tjenesten i Forsvaret (2022--2024)}\vspace{3pt}\\
+    \textbf{Tilgjengelighet}{: sommerjobb 2027; deltid fra jan. 2027; fulltid fra juni 2028}
+  }}
+\resumeBlockEnd
+
+\end{document}

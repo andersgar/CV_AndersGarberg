@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Bygg begge CV-er",
+      "detail": "Kompilerer engelsk og norsk CV til build/CV_AndersGarberg_ENG.pdf og build/CV_AndersGarberg_NOR.pdf",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "New-Item -ItemType Directory -Force build | Out-Null; foreach ($f in 'CV_AndersGarberg_ENG', 'CV_AndersGarberg_NOR') { xelatex -interaction=nonstopmode -halt-on-error -output-directory=build \"$f.tex\" | Select-String -Pattern '^!|Output written' ; if ($LASTEXITCODE -ne 0) { Write-Host \"Feil i $f.tex, se build/$f.log\"; exit 1 } }"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}

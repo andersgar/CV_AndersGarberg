@@ -134,7 +134,7 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
-% single-block section body (PROFILE, SKILLS, ADDITIONAL)
+% single-block section body (PROFILE, RELEVANT TECHNOLOGIES, ADDITIONAL)
 \newcommand{\resumeBlockStart}{\begin{itemize}[leftmargin=0in, label={}]}
 \newcommand{\resumeBlockEnd}{\end{itemize}}
 
@@ -149,7 +149,7 @@
 \begin{center}
     \textbf{\Huge Anders Garberg} \\ \vspace{5pt}
     \small
-    Graduate Automation / Robotics Engineer \textbullet\ M.Sc. Student, Cybernetics \& Robotics (NTNU)
+    Engineer, Robotics \& Autonomy (B.Sc.) \textbullet\ M.Sc. Student, Cybernetics \& Robotics, NTNU
     \\ \vspace{7pt}
     \small
     \faPhone* \hspace{2pt} \texttt{+47 978 79 280} \hspace{6pt} $|$ \hspace{6pt}
@@ -164,47 +164,88 @@
 \section{PROFILE}
 \resumeBlockStart
   \small{\item{
-M.Sc. student in Cybernetics and Robotics at NTNU, with a completed B.Sc. in Automation and Intelligent Systems. Robotics, autonomy and control, with hands-on experience from ROS 2 systems, simulation in NVIDIA Isaac Sim, and industrial software development.
+Robotics and autonomy engineer and M.Sc. student in Cybernetics and Robotics at NTNU. Built ROS~2 software and an NVIDIA Isaac Sim test environment for KONGSBERG's Lone Wolf unmanned ground vehicle. Currently works on guidance and navigation for an autonomous surface vessel in Marinor NTNU. Main interests are autonomous systems, maritime robotics and robotics software.
   }}
 \resumeBlockEnd
 
-%-----------SKILLS-----------
-\section{SKILLS}
+%-----------RELEVANT TECHNOLOGIES-----------
+\section{RELEVANT TECHNOLOGIES}
 \resumeBlockStart
   \small{\item{
-    \textbf{Programming}{: C/C++; Python; MATLAB; PLC ST/Ladder; TypeScript/React}\vspace{3pt} \\
-    \textbf{Robotics \& Autonomy}{: ROS~2; NVIDIA Isaac Sim; UGV and surface-vessel platforms; sensor integration; guidance and navigation; operator interfaces (Qt)}\vspace{3pt} \\
+    \textbf{Languages \& Frameworks}{: C++; Python; Qt; MATLAB; PLC Structured Text; TypeScript/React}\vspace{3pt} \\
+    \textbf{Robotics \& Autonomy}{: ROS~2; NVIDIA Isaac Sim; URDF/USD; guidance and navigation; sensor integration; unmanned ground vehicles; autonomous surface vessels}\vspace{3pt} \\
     \textbf{Control \& Modelling}{: control theory; MPC; system identification; Simulink; OPC}\vspace{3pt} \\
-    \textbf{Systems \& Tooling}{: Linux, incl.\ embedded (Jetson); Docker Compose; Git; networking, reverse proxying and monitoring}
+    \textbf{Systems}{: Linux; embedded Linux (NVIDIA Jetson); telemetry and video streaming; Docker Compose; Git; networking}
   }}
 \resumeBlockEnd
 
-%-----------EXPERIENCE-----------
-\section{EXPERIENCE}
+%-----------RELEVANT EXPERIENCE-----------
+\section{RELEVANT EXPERIENCE}
 \resumeSubHeadingListStart
-
-  \resumeSubheading
-    {Marinor NTNU}{Sep 2026 -- Present}
-    {Autonomy Engineer (Voluntary technical position)}{Trondheim, Norway}
-    \resumeItemListStart
-      \resumeItem{Student organization developing autonomous maritime vessels; member of the Ocean Autonomy Cluster.}
-      \resumeItem{Works on the autonomy stack, covering guidance and navigation for an autonomous surface vessel.}
-    \resumeItemListEnd
 
   \resumeSubheading
     {KONGSBERG}{Jun 2026 -- Aug 2026}
     {Summer Intern - Software, Lone Wolf}{Kongsberg, Norway}
     \resumeItemListStart
-      \resumeItem{Contributed to the development of a new unmanned ground vehicle (UGV) platform for the Lone Wolf project, including design and integration of a new platform concept.}
-      \resumeItem{Established communication between sensors, actuators, and operator systems; developed the ICS operator panel and the panel--platform link.}
-      \resumeItem{Developed, tested, and verified ROS~2-based autonomy software (C++).}
+      \resumeItem{Part of an eight-person student team that developed sensor integration and a control system for self-driving and object tracking on an unmanned ground vehicle.}
+      \resumeItem{Developed the ICS operator panel in Qt and a gateway that streams ROS~2 topics from the vehicle over the network to the panel.}
+      \resumeItem{Set up launch scripts on the vehicle's NVIDIA Jetson that start all ROS~2 nodes, the telemetry gateway and the video stream.}
+      \resumeItem{Developed, tested and verified ROS~2 software in C++ on the physical vehicle.}
     \resumeItemListEnd
+
+  \resumeSubheading
+    {Marinor NTNU}{Sep 2026 -- Present}
+    {Autonomy Engineer (Voluntary technical position)}{Trondheim, Norway}
+    \resumeItemListStart
+      \resumeItem{Develops guidance and navigation functionality for an autonomous surface vessel in a multidisciplinary student team.}
+      \resumeItem{Marinor builds autonomous maritime vessels and is a member of the Ocean Autonomy Cluster.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SELECTED PROJECTS-----------
+\section{SELECTED PROJECTS}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{B.Sc.\ Thesis: Lone Wolf Synthetic Test Environment} \ (KONGSBERG, grade A)}{Jan 2026 -- Jun 2026}
+    \resumeItemListStart
+      \resumeItem{Developed a synthetic test environment in NVIDIA Isaac Sim for KONGSBERG's Lone Wolf UGV, enabling repeatable testing of autonomy software without access to the physical robot. Team of four.}
+      \resumeItem{Responsible for integrating our ROS~2 software with Isaac Sim, including correct import of the robot's URDF and USD models and setup of the ROS~2 graphs in the simulator.}
+      \resumeItem{Validated against physical recordings with comparable odometry response and consistent depth camera data. Published in NVA: \href{https://hdl.handle.net/11250/5548753}{\texttt{hdl.handle.net/11250/5548753}}}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Automation Project - Water Tank Control} \ }{2025}
+    \resumeItemListStart
+      \resumeItem{Developed a discrete-time PID/PI-D controller in PLC Structured Text, including tracking/bumpless transfer, anti-windup, derivative filtering and lead-lag feedforward for disturbance compensation.}
+      \resumeItem{Built a closed-loop simulation setup by coupling PLC and Simulink via OPC, plus data-driven modelling (MATLAB System Identification / NLARX) to tune and validate behaviour before deployment.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{Informize - digital information screens (web app)} \ }{2025 -- Present}
+    \resumeItemListStart
+      \resumeItem{Full-stack web app (TypeScript/React) for running unattended information screens around the clock. Developed both with and without AI coding assistants.}
+    \resumeItemListEnd
+
+  % \resumeProjectHeading
+  %   {\textbf{Homelab} \ }{2024 -- Present}
+  %   \resumeItemListStart
+  %     \resumeItem{Self-hosted lab using Docker Compose, reverse proxying, and monitoring; used as a hands-on sandbox for infrastructure, networking, and automation.}
+  %   \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------OTHER EXPERIENCE-----------
+\newpage
+\section{OTHER EXPERIENCE}
+\resumeSubHeadingListStart
 
   \resumeOrgHeading
     {NTNU}{}
     {Teaching Assistant \textbullet\ Trondheim, Norway}
   \resumeRoleListStart
-    \resumeItem{Guides students through problem sets and lab work, gives academic follow-up, and supports course staff in delivery.}
+    \resumeItem{Guides students through problem sets and lab work, gives academic follow-up and supports course staff in delivery.}
 
     \resumeRoleHeading{TDT4136 Introduction to Artificial Intelligence}{Aug 2026 -- Present}
         \vspace{-15pt} % OVERLY LARGE GAP HERE!
@@ -220,9 +261,9 @@ M.Sc. student in Cybernetics and Robotics at NTNU, with a completed B.Sc. in Aut
 
   \resumeSubheading
     {Trondheim Kino}{Jun 2021 -- Present}
-    {Part-time: Shift Leader, Bartender, Sales Host}{Trondheim, Norway}
+    {Shift Leader (part-time)}{Trondheim, Norway}
     \resumeItemListStart
-      \resumeItem{Shift leader responsible for daily operations, staff training, and customer service; introduced procedures that improved efficiency in ticketing and kiosk sales. Also works independently in the cinema bar with responsibility for alcohol service.}
+      \resumeItem{Responsible for daily operations, staff training and customer service. Also responsible for the technical side of screenings, including projectors, playback servers and sound systems.}
     \resumeItemListEnd
 
   \resumeSubheading
@@ -235,7 +276,6 @@ M.Sc. student in Cybernetics and Robotics at NTNU, with a completed B.Sc. in Aut
 \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
-\newpage
 \section{EDUCATION}
 \resumeSubHeadingListStart
 
@@ -251,8 +291,8 @@ M.Sc. student in Cybernetics and Robotics at NTNU, with a completed B.Sc. in Aut
 
     \resumeRoleHeading{B.Sc. in Automation and Intelligent Systems}{Aug 2023 -- Jun 2026}
     \resumeRoleItemListStart
-      \resumeItem{Three-year degree in control engineering, robotics, autonomy, and intelligent systems.}
-      \resumeItem{Graduated with grade A.}
+      \resumeItem{Three-year degree in control engineering, robotics, autonomy and intelligent systems.}
+      \resumeItem{Grade average 4.5/5 (A). Thesis grade A.}
     \resumeRoleItemListEnd
 
   \resumeRoleListEnd
@@ -261,41 +301,8 @@ M.Sc. student in Cybernetics and Robotics at NTNU, with a completed B.Sc. in Aut
   %   {Thora Storm Upper Secondary School}{Aug 2019 -- Jun 2022}
   %   {General Studies with Natural Sciences}{Trondheim, Norway}
   %   \resumeItemListStart
-  %     \resumeItem{Focus on Mathematics R1/R2, Physics 1/2, and Technology and Research Studies.}
+  %     \resumeItem{Focus on Mathematics R1/R2, Physics 1/2 and Technology and Research Studies.}
   %   \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------
-\section{PROJECTS}
-\resumeSubHeadingListStart
-
-  \resumeProjectHeading
-    {\textbf{B.Sc.\ Thesis: Lone Wolf synthetic test environment} \ (with KONGSBERG)}{Jan 2026 -- Jun 2026}
-    \resumeItemListStart
-      \resumeItem{Built a modular, configurable synthetic test environment in NVIDIA Isaac Sim for the planned Lone Wolf UGV, designed to support future platform, payload, and sensor configurations.}
-      \resumeItem{Focused on interface consistency (/clock, TF, topics), repeatable scenario execution, and closed-loop testing to reduce dependency on physical hardware during development.}
-      \resumeItem{Delivered a simulation workflow usable as a practical extension of the physical platform and a foundation for synthetic data generation and perception testing. Team of four.}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{Informize - digital information screens (web app)} \ }{2025 -- Present}
-    \resumeItemListStart
-      \resumeItem{Built a full-stack web app for creating and running unattended ``public screens'' (digital signage): screens, content, and playback designed for stable always-on display.}
-    \resumeItemListEnd
-
-  % \resumeProjectHeading
-  %   {\textbf{Homelab} \ }{2024 -- Present}
-  %   \resumeItemListStart
-  %     \resumeItem{Self-hosted lab using Docker Compose, reverse proxying, and monitoring; used as a hands-on sandbox for infrastructure, networking, and automation.}
-  %   \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{Automation Project - Water Tank Control} \ }{2025}
-    \resumeItemListStart
-      \resumeItem{Developed a discrete-time PID/PI-D controller in PLC Structured Text, including tracking/bumpless transfer, anti-windup, derivative filtering, and lead-lag feedforward for disturbance compensation.}
-      \resumeItem{Built a closed-loop simulation setup by coupling PLC and Simulink via OPC, plus data-driven modelling (MATLAB System Identification / NLARX) to tune and validate behaviour before deployment.}
-    \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
@@ -309,39 +316,25 @@ M.Sc. student in Cybernetics and Robotics at NTNU, with a completed B.Sc. in Aut
   \resumeRoleListStart
 
     \resumeRoleHeading{Auditor}{Aug 2026 -- Present}
-    \resumeRoleItemListStart
-      \resumeItem{Reviews the association's accounts independently of the board, reconciles reported figures against source documents, and signs the audit report presented to the general assembly.}
-    \resumeRoleItemListEnd
-        \vspace{-5pt} % OVERLY LARGE GAP HERE!
+        \vspace{-15pt} % OVERLY LARGE GAP HERE!
 
-
-    \resumeRoleHeading{Event Committee Member}{Aug 2023 -- Jun 2026}
-    \vspace{-10pt} % OVERLY LARGE GAP HERE!
     \resumeRoleHeading{Financial Manager / Treasurer}{Oct 2024 -- Nov 2025}
     \resumeRoleItemListStart
-      \resumeItem{Owned budgeting, accounting, and financial planning for an association with several hundred members.}
-      \resumeItem{Established routines for financial control that improved oversight of income and expenses and made handover to the next board straightforward.}
+      \resumeItem{Owned budgeting, accounting and financial planning for an association with several hundred members.}
     \resumeRoleItemListEnd
     \vspace{-5pt} % OVERLY LARGE GAP HERE!
 
-    \resumeRoleHeading{Financial Manager, Event Committee}{Aug 2023 -- Oct 2024}
+    \resumeRoleHeading{Event Committee Member, incl. Financial Manager}{Aug 2023 -- Jun 2026}
 
   \resumeRoleListEnd
-
 
   \resumeSubheading
     {UKA}{Aug 2023 -- Nov 2023}
     {Bartender (Voluntary)}{Trondheim, Norway}
-    \resumeItemListStart
-      \resumeItem{Worked during one of Norway's largest student festivals at Samfundet; high-paced service role strengthening teamwork and stress management.}
-    \resumeItemListEnd
 
   \resumeSubheading
     {Stormrevyen}{Jun 2021 -- May 2022}
     {Manager and Treasurer (Voluntary)}{Trondheim, Norway}
-    \resumeItemListStart
-      \resumeItem{Led an annual school revue with 150+ participants, responsible for planning, rehearsals, and execution, and owned budgeting including ticket revenue and sponsorships.}
-    \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 

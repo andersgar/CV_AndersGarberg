@@ -106,6 +106,14 @@
     \end{tabular*}\vspace{\hugup}
 }
 
+% organisation header without a subtitle row
+\newcommand{\resumeOrgHeadingLine}[2]{
+  \vspace{\entrysep}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\\
+    \end{tabular*}\vspace{\hugup}
+}
+
 % role line nested under an organisation header
 \newcommand{\resumeRoleHeading}[2]{
   \vspace{\rolesep}\item
@@ -201,8 +209,8 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
 \resumeSubHeadingListStart
 
   \resumeSubheading
-    {KONGSBERG}{juni 2026 -- aug. 2026}
-    {Sommerstudent programvare, Lone Wolf}{Kongsberg}
+    {KONGSBERG}{Kongsberg \textbullet\ juni 2026 -- aug. 2026}
+    {Sommerstudent programvare, Lone Wolf}{}
     \resumeItemListStart
       \resumeItem{Lone Wolf er KONGSBERGs ubemannede bakkekj{\o}ret{\o}y. Vi var {\aa}tte studenter som videreutviklet sensorintegrasjon, kontrollsystem og fjernstyring. Jeg var en av to p{\aa} ICS-teamet, som hadde operat{\o}rpanelet og kommunikasjonen.}
       \resumeItem{Jeg hadde hovedansvaret for backend p{\aa} begge sider: en ROS~2-node i C++ p{\aa} kj{\o}ret{\o}yet som tilbyr et avgrenset API over ZeroMQ og backend i panelet i C++/Qt~6. Jeg var ogs{\aa} med p{\aa} UI-design og frontend.}
@@ -212,8 +220,8 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
     \resumeItemListEnd
 
   \resumeSubheading
-    {Marinor NTNU}{sep. 2026 -- n{\aa}}
-    {Autonomy Engineer (frivillig teknisk verv)}{Trondheim}
+    {Marinor NTNU}{Trondheim \textbullet\ sep. 2026 -- n{\aa}}
+    {Autonomy Engineer}{}
     \resumeItemListStart
       \resumeItem{Marinor er et studentteam p{\aa} tvers av fag som bygger det autonome overflatefart{\o}yet Proteus, f{\o}rst til Njord 2027 og senere RoboBoat. Teamet er medlem av Ocean Autonomy Cluster.}
       \resumeItem{Vi er fem p{\aa} autonomiteamet. Jeg har ansvar for transit: ruteplanlegging over lengre avstander, som mates inn i fart{\o}yets LOS-guidance. ROS~2 i C++ og Python, Docker og RViz, GitHub med branch-regler, review og tester.}
@@ -253,11 +261,13 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
 \section{ANNEN ERFARING}
 \resumeSubHeadingListStart
 
-  \resumeOrgHeading
-    {NTNU}{}
-    {L{\ae}ringsassistent \textbullet\ Trondheim}
+  \resumeSubheading
+    {NTNU}{Trondheim}
+    {L{\ae}ringsassistent}{}
+    \resumeItemListStart
+      \resumeItem{Veileder studenter i {\o}vinger og labarbeid, gir faglig oppf{\o}lging og st{\o}tter fagstaben i gjennomf{\o}ringen.}
+    \resumeItemListEnd
   \resumeRoleListStart
-    \resumeItem{Veileder studenter i {\o}vinger og labarbeid, gir faglig oppf{\o}lging og st{\o}tter fagstaben i gjennomf{\o}ringen.}
 
     \resumeRoleHeading{TDT4136 Introduksjon til kunstig intelligens}{aug. 2026 -- n{\aa}}
         \vspace{-15pt} % OVERLY LARGE GAP HERE!
@@ -272,15 +282,15 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
   \resumeRoleListEnd
 
   \resumeSubheading
-    {Trondheim Kino}{juni 2021 -- n{\aa}}
-    {Skiftleder (deltid)}{Trondheim}
+    {Trondheim Kino}{Trondheim \textbullet\ juni 2021 -- n{\aa}}
+    {Skiftleder (deltid)}{}
     \resumeItemListStart
       \resumeItem{Daglig drift, oppl{\ae}ring av ansatte og kundeservice, samt teknisk ansvar for projektorer, avspillingsservere og lydanlegg.}
     \resumeItemListEnd
 
   \resumeSubheading
-    {Forsvaret}{aug. 2022 -- jan. 2024}
-    {Sambandsoperat{\o}r i luftvernet}{{\O}rland}
+    {Forsvaret}{{\O}rland \textbullet\ aug. 2022 -- jan. 2024}
+    {Sambandsoperat{\o}r i luftvernet}{}
     \resumeItemListStart
       \resumeItem{Sambandssystemer i et milj{\o} med h{\o}y beredskap som del av NATO Response Force; sikker kommunikasjon mellom luftvernsystemer under krevende forhold.}
     \resumeItemListEnd
@@ -291,9 +301,8 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
 \section{UTDANNING}
 \resumeSubHeadingListStart
 
-  \resumeOrgHeading
-    {NTNU}{}
-    {Trondheim}
+  \resumeOrgHeadingLine
+    {NTNU}{Trondheim}
   \resumeRoleListStart
 
     \resumeRoleHeading{Master i kybernetikk og robotikk}{aug. 2026 -- juni 2028}
@@ -303,7 +312,7 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
 
     \resumeRoleHeading{Bachelor i automatisering og intelligente systemer}{aug. 2023 -- juni 2026}
     \resumeRoleItemListStart
-      \resumeItem{Tre{\aa}rig ingeni{\o}rutdanning i reguleringsteknikk, robotikk og autonomi. Snittkarakter 4,5 av 5 (A); bacheloroppgave A.}
+      \resumeItem{Tre{\aa}rig ingeni{\o}rutdanning i reguleringsteknikk, robotikk og autonomi. Snitt 4,5 av 5 (A), bacheloroppgave A.}
     \resumeRoleItemListEnd
 
   \resumeRoleListEnd
@@ -321,9 +330,8 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
 \section{VERV OG FRIVILLIG ARBEID}
 \resumeSubHeadingListStart
 
-  \resumeOrgHeading
-    {Elektra linjeforening}{}
-    {Linjeforening for elektroingeni{\o}rstudenter ved NTNU \textbullet\ Trondheim}
+  \resumeOrgHeadingLine
+    {Linjeforeningen Elektra}{Trondheim}
   \resumeRoleListStart
 
     \resumeRoleHeading{Revisor}{aug. 2026 -- n{\aa}}
@@ -336,12 +344,13 @@ Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter b
     \vspace{-5pt} % OVERLY LARGE GAP HERE!
 
     \resumeRoleHeading{Medlem av arrangementskomiteen, ogs{\aa} {\o}konomiansvarlig}{aug. 2023 -- juni 2026}
+        \vspace{-15pt} % OVERLY LARGE GAP HERE!
 
   \resumeRoleListEnd
 
   \resumeSubheading
-    {Stormrevyen}{juni 2021 -- mai 2022}
-    {Revysjef og {\o}konomiansvarlig (frivillig)}{Trondheim}
+    {Stormrevyen}{Trondheim \textbullet\ juni 2021 -- mai 2022}
+    {Revysjef og {\o}konomiansvarlig}{}
 
 \resumeSubHeadingListEnd
 

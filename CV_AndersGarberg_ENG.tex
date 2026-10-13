@@ -106,6 +106,14 @@
     \end{tabular*}\vspace{\hugup}
 }
 
+% organisation header without a subtitle row
+\newcommand{\resumeOrgHeadingLine}[2]{
+  \vspace{\entrysep}\item
+    \begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\\
+    \end{tabular*}\vspace{\hugup}
+}
+
 % role line nested under an organisation header
 \newcommand{\resumeRoleHeading}[2]{
   \vspace{\rolesep}\item
@@ -201,8 +209,8 @@ I work agile and test-driven, with Git, code review and CI, and I use AI coding 
 \resumeSubHeadingListStart
 
   \resumeSubheading
-    {KONGSBERG}{Jun 2026 -- Aug 2026}
-    {Summer Intern, Software, Lone Wolf}{Kongsberg, Norway}
+    {KONGSBERG}{Kongsberg, Norway \textbullet\ Jun 2026 -- Aug 2026}
+    {Summer Intern, Software, Lone Wolf}{}
     \resumeItemListStart
       \resumeItem{Lone Wolf is KONGSBERG's unmanned ground vehicle. We were eight students advancing sensor integration, control and remote operation; I was one of two on the ICS team (operator panel and communication).}
       \resumeItem{I had the main responsibility for the backend on both sides: a ROS~2 node in C++ on the vehicle that offers a narrow API over ZeroMQ, and the backend of the panel in C++/Qt~6. I also took part in UI design and frontend work.}
@@ -212,8 +220,8 @@ I work agile and test-driven, with Git, code review and CI, and I use AI coding 
     \resumeItemListEnd
 
   \resumeSubheading
-    {Marinor NTNU}{Sep 2026 -- Present}
-    {Autonomy Engineer (volunteer technical role)}{Trondheim, Norway}
+    {Marinor NTNU}{Trondheim, Norway \textbullet\ Sep 2026 -- Present}
+    {Autonomy Engineer}{}
     \resumeItemListStart
       \resumeItem{Marinor is a student team from several fields building the autonomous surface vessel Proteus, first for Njord 2027 and later RoboBoat. The team is a member of the Ocean Autonomy Cluster.}
       \resumeItem{We are five on the autonomy team, and I am responsible for transit: route planning over longer distances, which feeds the vessel's LOS guidance. ROS~2 in C++ and Python, Docker and RViz, GitHub with branch rules, review and tests.}
@@ -253,11 +261,13 @@ I work agile and test-driven, with Git, code review and CI, and I use AI coding 
 \section{OTHER EXPERIENCE}
 \resumeSubHeadingListStart
 
-  \resumeOrgHeading
-    {NTNU}{}
-    {Teaching Assistant \textbullet\ Trondheim, Norway}
+  \resumeSubheading
+    {NTNU}{Trondheim, Norway}
+    {Teaching Assistant}{}
+    \resumeItemListStart
+      \resumeItem{Guides students through problem sets and lab work, gives academic follow-up and supports course staff in delivery.}
+    \resumeItemListEnd
   \resumeRoleListStart
-    \resumeItem{Guides students through problem sets and lab work, gives academic follow-up and supports course staff in delivery.}
 
     \resumeRoleHeading{TDT4136 Introduction to Artificial Intelligence}{Aug 2026 -- Present}
         \vspace{-15pt} % OVERLY LARGE GAP HERE!
@@ -272,15 +282,15 @@ I work agile and test-driven, with Git, code review and CI, and I use AI coding 
   \resumeRoleListEnd
 
   \resumeSubheading
-    {Trondheim Kino}{Jun 2021 -- Present}
-    {Shift Leader (part-time)}{Trondheim, Norway}
+    {Trondheim Kino}{Trondheim, Norway \textbullet\ Jun 2021 -- Present}
+    {Shift Leader (part-time)}{}
     \resumeItemListStart
       \resumeItem{Daily operations, staff training and customer service; technical responsibility for projectors, servers and sound.}
     \resumeItemListEnd
 
   \resumeSubheading
-    {Norwegian Armed Forces}{Aug 2022 -- Jan 2024}
-    {Communications Operator --- Ground Based Air Defense}{\O rland, Norway}
+    {Norwegian Armed Forces}{\O rland, Norway \textbullet\ Aug 2022 -- Jan 2024}
+    {Communications Operator --- Ground Based Air Defense}{}
     \resumeItemListStart
       \resumeItem{Communications systems in a high-readiness NATO Response Force unit; secure communication between GBAD systems.}
     \resumeItemListEnd
@@ -291,9 +301,8 @@ I work agile and test-driven, with Git, code review and CI, and I use AI coding 
 \section{EDUCATION}
 \resumeSubHeadingListStart
 
-  \resumeOrgHeading
-    {NTNU}{}
-    {Trondheim, Norway}
+  \resumeOrgHeadingLine
+    {NTNU}{Trondheim, Norway}
   \resumeRoleListStart
 
     \resumeRoleHeading{M.Sc. in Cybernetics and Robotics}{Aug 2026 -- Jun 2028}
@@ -321,9 +330,8 @@ I work agile and test-driven, with Git, code review and CI, and I use AI coding 
 \section{LEADERSHIP \& VOLUNTEERING}
 \resumeSubHeadingListStart
 
-  \resumeOrgHeading
-    {Elektra Student Association}{}
-    {Student association for electrical engineering students at NTNU \textbullet\ Trondheim, Norway}
+  \resumeOrgHeadingLine
+    {Elektra Student Association}{Trondheim, Norway}
   \resumeRoleListStart
 
     \resumeRoleHeading{Auditor}{Aug 2026 -- Present}
@@ -336,12 +344,13 @@ I work agile and test-driven, with Git, code review and CI, and I use AI coding 
     \vspace{-5pt} % OVERLY LARGE GAP HERE!
 
     \resumeRoleHeading{Event Committee Member, incl. Financial Manager}{Aug 2023 -- Jun 2026}
+        \vspace{-15pt} % OVERLY LARGE GAP HERE!
 
   \resumeRoleListEnd
 
   \resumeSubheading
-    {Stormrevyen}{Jun 2021 -- May 2022}
-    {Manager and Treasurer (Voluntary)}{Trondheim, Norway}
+    {Stormrevyen}{Trondheim, Norway \textbullet\ Jun 2021 -- May 2022}
+    {Manager and Treasurer}{}
 
 \resumeSubHeadingListEnd
 

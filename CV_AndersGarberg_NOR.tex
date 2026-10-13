@@ -73,7 +73,7 @@
 %   \hugup     negative space that pulls a bullet list up under its heading
 %   itemsep    space between bullets (in \setlist)
 %-------------------------
-\newlength{\entrysep}\setlength{\entrysep}{5pt}
+\newlength{\entrysep}\setlength{\entrysep}{4pt}
 \newlength{\rolesep}\setlength{\rolesep}{4pt}
 \newlength{\hugup}\setlength{\hugup}{-3pt}
 
@@ -171,11 +171,17 @@
     \faGlobeEurope \hspace{2pt} \href{https://garberg.wtf}{\texttt{garberg.wtf}} \hspace{6pt}
 \end{center}
 
-%-----------PROFIL-----------
-\section{PROFIL}
+%-----------SAMMENDRAG-----------
+\section{SAMMENDRAG}
 \resumeBlockStart
   \small{\item{
-Ingeni{\o}r innen robotikk og autonomi og masterstudent i kybernetikk og robotikk ved NTNU. Har utviklet ROS~2-programvare og et testmilj{\o} i NVIDIA Isaac Sim for KONGSBERGs ubemannede bakkekj{\o}ret{\o}y Lone Wolf. Jobber n{\aa} med guidance og navigasjon for et autonomt overflatefart{\o}y i Marinor NTNU. Hovedinteressene mine er autonome systemer, maritim robotikk og programvare for robotikk.
+Jeg er ingeni{\o}r innen robotikk og autonomi (B.Sc.) og tar n{\aa} master i kybernetikk og robotikk ved NTNU, studieretning roboter og fart{\o}ystyring. Jeg skriver programvare for autonome kj{\o}ret{\o}y i C++ og ROS~2, fra sensorer og kommunikasjon om bord til operat{\o}rpanelet. Jeg er nysgjerrig, liker struktur og leverer det jeg lover.
+\vspace{2pt}
+
+Sommeren 2026 var jeg p{\aa} KONGSBERGs Lone Wolf-prosjekt, der jeg laget operat{\o}rpanelet og lenken mellom panel og kj{\o}ret{\o}y (C++, Qt~6, ROS~2, ZeroMQ, GStreamer). Bacheloroppgaven min var et testmilj{\o} for det samme kj{\o}ret{\o}yet i NVIDIA Isaac Sim, som sommerteamet brukte. I Marinor NTNU jobber jeg n{\aa} med ruteplanlegging og guidance for overflatefart{\o}yet Proteus.
+\vspace{2pt}
+
+Jeg jobber smidig og testdrevet med Git, code review og CI. AI-kodeassistenter bruker jeg som et verkt{\o}y til gjennomgang, testing, dokumentasjon og feils{\o}king. Det jeg liker best er {\aa} f{\aa} hele systemet til {\aa} kj{\o}re p{\aa} ekte maskinvare.
   }}
 \resumeBlockEnd
 
@@ -183,10 +189,10 @@ Ingeni{\o}r innen robotikk og autonomi og masterstudent i kybernetikk og robotik
 \section{RELEVANTE TEKNOLOGIER}
 \resumeBlockStart
   \small{\item{
-    \textbf{Spr{\aa}k og rammeverk}{: C++; Python; Qt; MATLAB; PLS Structured Text; TypeScript/React}\vspace{3pt} \\
-    \textbf{Robotikk og autonomi}{: ROS~2; NVIDIA Isaac Sim; URDF/USD; guidance og navigasjon; sensorintegrasjon; ubemannede bakkekj{\o}ret{\o}y; autonome overflatefart{\o}y}\vspace{3pt} \\
-    \textbf{Regulering og modellering}{: reguleringsteknikk; MPC; systemidentifikasjon; Simulink; OPC}\vspace{3pt} \\
-    \textbf{Systemer}{: Linux; embedded Linux (NVIDIA Jetson); str{\o}mming av telemetri og video; Docker Compose; Git; nettverk}
+    \textbf{Spr{\aa}k og rammeverk}{: C++; Qt~6; Python; MATLAB/Simulink; PLS Structured Text; TypeScript/React}\vspace{3pt} \\
+    \textbf{Robotikk, autonomi og regulering}{: ROS~2; NVIDIA Isaac Sim; URDF/USD; ruteplanlegging og guidance (LOS); sensorintegrasjon; reguleringsteknikk; MPC; systemidentifikasjon; RViz}\vspace{3pt} \\
+    \textbf{Kommunikasjon og systemer}{: ZeroMQ; GStreamer; Tailscale/VPN; Linux og systemd; NVIDIA Jetson; Docker Compose; nettverk}\vspace{3pt} \\
+    \textbf{Arbeidsm{\aa}te}{: Git (GitHub/GitLab); code review; CI (GitHub Actions, GitLab CI); smidig og testdrevet utvikling; AI-kodeassistenter (Claude Code, ChatGPT)}
   }}
 \resumeBlockEnd
 
@@ -198,18 +204,19 @@ Ingeni{\o}r innen robotikk og autonomi og masterstudent i kybernetikk og robotik
     {KONGSBERG}{juni 2026 -- aug. 2026}
     {Sommerstudent programvare, Lone Wolf}{Kongsberg}
     \resumeItemListStart
-      \resumeItem{Del av et team p{\aa} {\aa}tte studenter som utviklet sensorintegrasjon og kontrollsystem for selvkj{\o}ring og objekttracking p{\aa} et ubemannet bakkekj{\o}ret{\o}y.}
-      \resumeItem{Utviklet ICS-operat{\o}rpanelet i Qt og en gateway som str{\o}mmer ROS~2-topics fra kj{\o}ret{\o}yet over nettverket til panelet.}
-      \resumeItem{Satte opp launch-skript p{\aa} kj{\o}ret{\o}yets NVIDIA Jetson som starter alle ROS~2-noder, telemetri-gatewayen og videostr{\o}mmen.}
-      \resumeItem{Utviklet, testet og verifiserte ROS~2-programvare i C++ p{\aa} det fysiske kj{\o}ret{\o}yet.}
+      \resumeItem{Lone Wolf er KONGSBERGs ubemannede bakkekj{\o}ret{\o}y. Vi var {\aa}tte studenter som videreutviklet sensorintegrasjon, kontrollsystem og fjernstyring. Jeg var en av to p{\aa} ICS-teamet, som hadde operat{\o}rpanelet og kommunikasjonen.}
+      \resumeItem{Jeg hadde hovedansvaret for backend p{\aa} begge sider: en ROS~2-node i C++ p{\aa} kj{\o}ret{\o}yet som tilbyr et avgrenset API over ZeroMQ og backend i panelet i C++/Qt~6. Jeg var ogs{\aa} med p{\aa} UI-design og frontend.}
+      \resumeItem{Nettverksarkitekturen tegnet jeg opp sammen med teamet: peer-to-peer over kj{\o}ret{\o}yets eget nett og et Tailscale-overlay med automatisk oppdagelse og egne kanaler for kommandoer og for video (GStreamer, H.264), s{\aa} video aldri kommer i veien for styring. Kommandoer har utl{\o}pstid, tilganger er stengt som standard og n{\o}dstopp h{\aa}ndheves p{\aa} kj{\o}ret{\o}yet.}
+      \resumeItem{For {\aa} kunne utvikle panelet uten kj{\o}ret{\o}yet laget jeg en mock-backend som etterlignet plattformens API. P{\aa} kj{\o}ret{\o}yets NVIDIA Jetson skrev jeg ROS~2 launch-filer som starter noder, gateway og videostr{\o}m.}
+      \resumeItem{Resultatet: en operat{\o}r med laptop p{\aa} 5G finner kj{\o}ret{\o}yet uten oppsett, kj{\o}rer det, styrer t{\aa}rnet, ser to kamerabilder og kan stoppe det. Vi demonstrerte dette for ledelsen p{\aa} det fysiske kj{\o}ret{\o}yet.}
     \resumeItemListEnd
 
   \resumeSubheading
     {Marinor NTNU}{sep. 2026 -- n{\aa}}
     {Autonomy Engineer (frivillig teknisk verv)}{Trondheim}
     \resumeItemListStart
-      \resumeItem{Utvikler funksjonalitet for guidance og navigasjon p{\aa} et autonomt overflatefart{\o}y i et tverrfaglig studentteam.}
-      \resumeItem{Marinor bygger autonome maritime fart{\o}y og er medlem av Ocean Autonomy Cluster.}
+      \resumeItem{Marinor er et studentteam p{\aa} tvers av fag som bygger det autonome overflatefart{\o}yet Proteus, f{\o}rst til Njord 2027 og senere RoboBoat. Teamet er medlem av Ocean Autonomy Cluster.}
+      \resumeItem{Vi er fem p{\aa} autonomiteamet. Jeg har ansvar for transit: ruteplanlegging over lengre avstander, som mates inn i fart{\o}yets LOS-guidance. ROS~2 i C++ og Python, Docker og RViz, GitHub med branch-regler, review og tester.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -221,34 +228,28 @@ Ingeni{\o}r innen robotikk og autonomi og masterstudent i kybernetikk og robotik
   \resumeProjectHeading
     {\textbf{Bacheloroppgave: Lone Wolf, syntetisk testmilj{\o}} \ (KONGSBERG, karakter A)}{jan. 2026 -- juni 2026}
     \resumeItemListStart
-      \resumeItem{Utviklet et syntetisk testmilj{\o} i NVIDIA Isaac Sim for KONGSBERGs Lone Wolf-UGV, slik at autonomiprogramvare kan testes repeterbart uten tilgang til den fysiske roboten. Gruppe p{\aa} fire.}
-      \resumeItem{Ansvarlig for {\aa} integrere ROS~2-programvaren v{\aa}r med Isaac Sim, blant annet riktig import av robotens URDF- og USD-modeller og oppsett av ROS~2-grafene i simulatoren.}
-      \resumeItem{Validert mot fysiske m{\aa}linger med sammenlignbar odometrirespons og konsistente dybdedata fra kameraet. Publisert i NVA: \href{https://hdl.handle.net/11250/5548753}{\texttt{hdl.handle.net/11250/5548753}}}
+      \resumeItem{Et syntetisk testmilj{\o} i NVIDIA Isaac Sim for Lone Wolf, s{\aa} autonomiprogramvaren kan testes om igjen uten den fysiske roboten. Vi var fire i gruppa, med KONGSBERG Land Systems som oppdragsgiver.}
+      \resumeItem{Min del var Isaac Sim-utvidelsen (Python): den laster robotens URDF/USD, setter opp kamera, lidar, IMU og odometri, kobler ROS~2-grafen via simulatorens egen bro og har et GUI der brukeren velger og endrer scenario.}
+      \resumeItem{Vi validerte mot m{\aa}linger p{\aa} den fysiske roboten (odometrirespons og dybdedata stemte). Sommerteamet 2026 brukte milj{\o}et videre. Publisert i NVA: \href{https://hdl.handle.net/11250/5548753}{\texttt{hdl.handle.net/11250/5548753}}}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{Automatiseringsprosjekt - niv{\aa}regulering av vanntank} \ }{2025}
+    {\textbf{Egne prosjekter} \ }{2024 -- n{\aa}}
     \resumeItemListStart
-      \resumeItem{Utviklet en tidsdiskret PID/PI-D-regulator i PLS (Structured Text) med tracking og rykkfri overgang, anti-windup, derivatfilter og lead-lag-foroverkobling for forstyrrelseskompensering.}
-      \resumeItem{Bygde et oppsett for simulering i lukket sl{\o}yfe ved {\aa} koble PLS og Simulink via OPC. Brukte datadrevet modellering (MATLAB System Identification / NLARX) til {\aa} tune og validere oppf{\o}rselen f{\o}r idriftsettelse.}
+      \resumeItem{\textbf{Homelab:} NAS og to Raspberry Pi med Docker Compose, Tailscale, DNS, bilde- og filserver, e-post og overv{\aa}king.}
+      \resumeItem{\textbf{Smarthus:} Home Assistant med egne integrasjoner og dashboard-kort og en plantesensor p{\aa} en ESP-mikrokontroller (Arduino/C++).}
+      \resumeItem{\textbf{garberg.wtf og Informize:} egen nettside med app-portal og en webapp for informasjonsskjermer. TypeScript/React med Supabase, CI i GitHub Actions, publisert p{\aa} Cloudflare Pages.}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{Informize - digitale informasjonsskjermer (webapp)} \ }{2025 -- n{\aa}}
+    {\textbf{Automatiseringsprosjekt: niv{\aa}regulering av vanntank} \ }{2025}
     \resumeItemListStart
-      \resumeItem{Fullstack webapplikasjon (TypeScript/React) for ubetjente informasjonsskjermer som g{\aa}r d{\o}gnet rundt. Utviklet b{\aa}de med og uten AI-kodeassistenter.}
+      \resumeItem{Niv{\aa}regulator (tidsdiskret PID) for en vanntank i PLS Structured Text, med anti-windup og foroverkobling, som gruppearbeid. Lukket sl{\o}yfe simulert med PLS-en mot Simulink via OPC, tunet med MATLAB System Identification.}
     \resumeItemListEnd
-
-  % \resumeProjectHeading
-  %   {\textbf{Homelab} \ }{2024 -- n{\aa}}
-  %   \resumeItemListStart
-  %     \resumeItem{Egen lab med Docker Compose, reverse proxy og overv{\aa}kning; brukes som praktisk sandkasse for infrastruktur, nettverk og automatisering.}
-  %   \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 %-----------ANNEN ERFARING-----------
-\newpage
 \section{ANNEN ERFARING}
 \resumeSubHeadingListStart
 
@@ -274,14 +275,14 @@ Ingeni{\o}r innen robotikk og autonomi og masterstudent i kybernetikk og robotik
     {Trondheim Kino}{juni 2021 -- n{\aa}}
     {Skiftleder (deltid)}{Trondheim}
     \resumeItemListStart
-      \resumeItem{Ansvar for daglig drift, oppl{\ae}ring av ansatte og kundeservice. Har ogs{\aa} ansvar for det tekniske rundt visningene, blant annet projektorer, avspillingsservere og lydanlegg.}
+      \resumeItem{Daglig drift, oppl{\ae}ring av ansatte og kundeservice, samt teknisk ansvar for projektorer, avspillingsservere og lydanlegg.}
     \resumeItemListEnd
 
   \resumeSubheading
     {Forsvaret}{aug. 2022 -- jan. 2024}
     {Sambandsoperat{\o}r i luftvernet}{{\O}rland}
     \resumeItemListStart
-      \resumeItem{Operativ erfaring med sambandssystemer i et milj{\o} med h{\o}y beredskap som del av NATO Response Force; s{\o}rget for sikker og effektiv kommunikasjon mellom luftvernsystemer under krevende forhold.}
+      \resumeItem{Sambandssystemer i et milj{\o} med h{\o}y beredskap som del av NATO Response Force; sikker kommunikasjon mellom luftvernsystemer under krevende forhold.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -302,8 +303,7 @@ Ingeni{\o}r innen robotikk og autonomi og masterstudent i kybernetikk og robotik
 
     \resumeRoleHeading{Bachelor i automatisering og intelligente systemer}{aug. 2023 -- juni 2026}
     \resumeRoleItemListStart
-      \resumeItem{Tre{\aa}rig ingeni{\o}rutdanning i reguleringsteknikk, robotikk, autonomi og intelligente systemer.}
-      \resumeItem{Snittkarakter 4,5 av 5 (A). Bacheloroppgave: A.}
+      \resumeItem{Tre{\aa}rig ingeni{\o}rutdanning i reguleringsteknikk, robotikk og autonomi. Snittkarakter 4,5 av 5 (A); bacheloroppgave A.}
     \resumeRoleItemListEnd
 
   \resumeRoleListEnd
@@ -338,10 +338,6 @@ Ingeni{\o}r innen robotikk og autonomi og masterstudent i kybernetikk og robotik
     \resumeRoleHeading{Medlem av arrangementskomiteen, ogs{\aa} {\o}konomiansvarlig}{aug. 2023 -- juni 2026}
 
   \resumeRoleListEnd
-
-  \resumeSubheading
-    {UKA}{aug. 2023 -- nov. 2023}
-    {Bartender (frivillig)}{Trondheim}
 
   \resumeSubheading
     {Stormrevyen}{juni 2021 -- mai 2022}

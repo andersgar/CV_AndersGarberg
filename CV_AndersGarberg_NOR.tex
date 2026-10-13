@@ -138,6 +138,9 @@
 \newcommand{\resumeBlockStart}{\begin{itemize}[leftmargin=0in, label={}]}
 \newcommand{\resumeBlockEnd}{\end{itemize}}
 
+\newif\ifcvpublic
+\IfFileExists{public.flag}{\cvpublictrue}{}
+
 \color{text-grey}
 
 %-------------------------------------------
@@ -152,7 +155,9 @@
     Ingeni{\o}r, robotikk og autonomi (B.Sc.) \textbullet\ Masterstudent i kybernetikk og robotikk, NTNU
     \\ \vspace{7pt}
     \small
+    \ifcvpublic\else
     \faPhone* \hspace{2pt} \texttt{+47 978 79 280} \hspace{6pt} $|$ \hspace{6pt}
+    \fi
     \faEnvelope \hspace{2pt} \href{mailto:anders@garberg.wtf}{\texttt{anders@garberg.wtf}} \hspace{6pt} $|$  \hspace{6pt}
     \faMapMarker* \hspace{2pt}\texttt{Trondheim} \hspace{6pt} \\ \vspace{3pt}
     \faLinkedin \hspace{2pt} \href{https://no.linkedin.com/in/anders-garberg}{\texttt{LinkedIn}} \hspace{6pt} $|$ \hspace{6pt}

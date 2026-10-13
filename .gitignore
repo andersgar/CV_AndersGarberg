@@ -7,3 +7,6 @@ build/
 *.fdb_latexmk
 *.synctex.gz
 *.xdv
+
+# marker for the public build (created by CI only)
+public.flag

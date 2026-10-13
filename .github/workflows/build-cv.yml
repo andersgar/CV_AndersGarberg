@@ -1,0 +1,81 @@
+name: Build CVs
+
+# Builds both CVs with LuaLaTeX (same engine as Overleaf).
+# Pull requests: build only, PDFs are attached to the run as an artifact.
+# Push to main: build, then copy the PDFs into the website repo, which deploys garberg.wtf.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.tex"
+      - ".github/workflows/build-cv.yml"
+  pull_request:
+    paths:
+      - "**.tex"
+      - ".github/workflows/build-cv.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-cv-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The published CVs leave out the phone number (see \ifcvpublic in the .tex files)
+      - name: Mark as public build
+        run: touch public.flag
+
+      - name: Compile both CVs
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            CV_AndersGarberg_ENG.tex
+            CV_AndersGarberg_NOR.tex
+          latexmk_use_lualatex: true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdfs
+          path: |
+            CV_AndersGarberg_ENG.pdf
+            CV_AndersGarberg_NOR.pdf
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: cv-pdfs
+          path: pdfs
+
+      # WEBSITE_REPO_TOKEN: fine-grained token with Contents read/write on andersgar/anders.garberg.wtf only
+      - uses: actions/checkout@v4
+        with:
+          repository: andersgar/anders.garberg.wtf
+          ref: main
+          token: ${{ secrets.WEBSITE_REPO_TOKEN }}
+          path: site
+
+      - name: Publish PDFs to the website
+        working-directory: site
+        run: |
+          cp ../pdfs/CV_AndersGarberg_ENG.pdf ../pdfs/CV_AndersGarberg_NOR.pdf public/content/
+          git add public/content/CV_AndersGarberg_ENG.pdf public/content/CV_AndersGarberg_NOR.pdf
+          if git diff --cached --quiet; then
+            echo "CVs unchanged, nothing to publish."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update CVs from CV_AndersGarberg@${GITHUB_SHA::7}"
+          git push

@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The published CVs leave out the phone number (see \ifcvpublic in the .tex files)
+      # The published CVs black out the phone number (see \ifcvpublic in the .tex files)
       - name: Mark as public build
         run: touch public.flag
 

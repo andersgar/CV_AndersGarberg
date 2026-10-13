@@ -139,6 +139,7 @@
 \newcommand{\resumeBlockEnd}{\end{itemize}}
 
 \newif\ifcvpublic
+\newlength{\cvphonewidth}
 \IfFileExists{public.flag}{\cvpublictrue}{}
 
 \color{text-grey}
@@ -155,9 +156,14 @@
     Engineer, Robotics \& Autonomy (B.Sc.) \textbullet\ M.Sc. Student, Cybernetics \& Robotics, NTNU
     \\ \vspace{7pt}
     \small
-    \ifcvpublic\else
-    \faPhone* \hspace{2pt} \texttt{+47 978 79 280} \hspace{6pt} $|$ \hspace{6pt}
+    % Public build: the number is blacked out by a bar exactly as wide as the digits.
+    \faPhone* \hspace{2pt} \texttt{+47 }%
+    \ifcvpublic
+      \settowidth{\cvphonewidth}{\texttt{978 79 280}}\rule[-0.35ex]{\cvphonewidth}{1.5ex}%
+    \else
+      \texttt{978 79 280}%
     \fi
+    \hspace{6pt} $|$ \hspace{6pt}
     \faEnvelope \hspace{2pt} \href{mailto:anders@garberg.wtf}{\texttt{anders@garberg.wtf}} \hspace{6pt} $|$  \hspace{6pt}
     \faMapMarker* \hspace{2pt}\texttt{Trondheim, Norway} \hspace{6pt} \\ \vspace{3pt}
     \faLinkedin \hspace{2pt} \href{https://no.linkedin.com/in/anders-garberg}{\texttt{LinkedIn}} \hspace{6pt} $|$ \hspace{6pt}
